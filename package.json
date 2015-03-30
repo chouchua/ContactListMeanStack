@@ -1,12 +1,24 @@
 {
   "name": "contactList",
   "version": "1.0.0",
-  "description": "",
+  "description": "contact list made with mean stack.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://chouchua:Jimmytw1@github.com/chouchua/ContactListMeanStack"
+  },
+  "bugs": {
+    "url": "https://github.com/chouchua/ContactListMeanStack/issues"
+  },
+  "homepage": "https://github.com/chouchua/ContactListMeanStack"
 }
