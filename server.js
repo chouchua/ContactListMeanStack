@@ -23,13 +23,18 @@ app.get('/contactlist',
 	// var contactlist= [person1,person2,person3];
 	// res.json(contactlist); //respond to get request and send response in json format
 	app.post('/contactlist',function(req,res){
-		console.log(req.body);
+		console.log(req.body); //requests info from body, does
+		//not know how to parse body. -> requires body parser.
 		db.contactlist.insert(req.body,function(err,doc){
-			res.json(doc);
+			res.json(doc); //send it back to controller
+			//the function 
 		})
 	}
 	)
 });
-
+app.delete('/contactlist/:id',function(req,res){
+	var id=req.params.id;
+	console.log(id);
+})
 app.listen(3000);
 console.log("server running on port 3000");
