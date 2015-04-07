@@ -42,7 +42,32 @@ myApp.controller('AppCtrl',
 	}
 	$scope.remove=function(id){
 		console.log(id);
-		$http.delete('/contactlist/'+ id);
+		$http.delete('/contactlist/'+ id).success(function(response){
+			refresh();
+		});
+	}
+	$scope.edit=function(id){
+		console.log(id);
+		$http.get('/contactlist/'+id).success(function(response){
+				$scope.contact=response; //put the response into contact boxes
+				//the box that has ng-model
+		})
+	}
+	$scope.update=function(){
+		console.log($scope.contact._id);
+		//use a put request to send data to server
+		$http.put('/contactlist/'+ $scope.contact._id,$scope.contact).success(function(response){
+	refresh();
+
+		});
+	
+	}
+	$scope.deselect =function(){
+		$scope.contact='';
+	}
+
+	$scope.save = function(){
+		$scope.noteText = "cool";
 	}
 
 }
